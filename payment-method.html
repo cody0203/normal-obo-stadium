@@ -19,13 +19,15 @@
     <link rel="stylesheet" type="text/css" href="./css/used-in-js.css"/>
     <!-- Components CSS-->
     <link rel="stylesheet" type="text/css" href="./css/components/header.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/components/buying/shipping-info.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/components/payment-methods-modal.css"/>
     <!-- Common CSS-->
     <link rel="stylesheet" type="text/css" href="./css/main.css"/>
     <link rel="stylesheet" type="text/css" href="./css/except-home-page.css"/>
     <link rel="stylesheet" type="text/css" href="./css/used-in-js.css"/>
     <link rel="stylesheet" type="text/css" href="./css/account.css"/>
-    <link rel="stylesheet" type="text/css" href="./css/bid-details.css"/>
-    <title>Thông tin đấu giá</title>
+    <link rel="stylesheet" type="text/css" href="./css/account-setting.css"/>
+    <title>Thông tin tài khoản</title>
     <link rel="shortcut icon" href="./image/favicon.ico" type="image/x-icon"/>
   </head>
   <body>
@@ -51,9 +53,9 @@
       </nav>
     </header>
     <main>
-      <div class="container">
+      <div class="main-content-wrapper container">
         <div class="row">
-          <div class="col-lg-3 left-sidebar-wrapper">
+          <div class="col-lg-3">
             <div class="left-sidebar">
               <div class="header">
                 <div class="avatar"><img class="img-fluid" src="./image/post/avatar.png" alt="avatar"/></div>
@@ -68,36 +70,130 @@
           </div>
           <div class="col-lg-9 main-content-wrapper">
             <div class="main-content">
-              <div class="header"><a class="go-back-previous-page" href="./buying-selling-products.html"><i class="fas fa-chevron-left"></i> Trở lại</a>
-                <div class="order-status-wrapper">
-                  <div>Mã đơn<span class="order-number">#123abc</span></div>
-                  <div class="status">Hết hạn trong: 18 ngày</div>
-                </div>
-              </div>
-              <div class="break-line"></div>
-              <div class="item">
-                <div class="product-info-wrapper">
-                  <div class="thumbnails"><img class="img-fluid" src="./image/product/yeezy-700-waverunner-solid-grey.jpg" alt=""/></div>
-                  <div class="product-info"><a class="name" href="product-details.html">Adidas Yeezy Boost 700 Wave Runner Solid Grey</a>
-                    <div class="size">8US | 41VN | 26CM</div>
-                  </div>
-                </div>
-                <div class="price asks-price">9.550.000 &#x20AB;</div>
-                <button class="btn btn-primary red-btn cancel-btn" disabled="disabled">Huỷ đấu giá</button>
-              </div>
-              <div class="item-small">
-                <div class="order-number-wrapper">Mã đơn<a class="order-number" href="#">#123abc</a></div>
-                <div class="item-info-wrapper">
-                  <div class="product-info-wrapper">
-                    <div class="product-info"><a class="name" href="product-details.html">Adidas Yeezy Boost 700 Wave Runner Solid Grey</a>
-                      <div class="size">8US | 41VN | 26CM</div>
-                      <div class="status">Hết hạn trong: 18 ngày</div>
+              <h2 class="account-title">Thông tin thanh toán</h2>
+              <div class="tab-content" id="pills-tabContent">                             
+                <!-- payment-methods-setting Section-->
+                <div id="payment-methods-setting">
+                  <div class="setting-box">
+                    <div class="payment-item">
+                      <div class="logo-methods"><img class="img-fluid" src="./image/visa.png" alt="visa"/></div>
+                      <div class="card-number">********1234</div>
+                      <div class="delete text-btn" data-toggle="modal" data-target="#confirmDelete">Xoá</div>
+                    </div>
+                    <div class="break-line"></div>
+                    <div class="payment-item">
+                      <div class="logo-methods"><img class="img-fluid" src="./image/visa.png" alt="visa"/></div>
+                      <div class="card-number">********1234</div>
+                      <div class="delete text-btn" data-toggle="modal" data-target="#confirmDelete">Xoá</div>
                     </div>
                   </div>
-                  <div class="price asks-price">9.550.000 &#x20AB;</div>
-                  <button class="btn btn-primary red-btn cancel-btn" disabled="disabled">Huỷ đấu giá</button>
+                  <div class="btn btn-primary red-btn add-new-payment-btn" data-toggle="modal" data-target="#paymentMethods">+ Thêm mới</div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal -->
+      <div class="modal fade" id="changePassword" tabindex="-1" role="dialog" aria-labelledby="changePasswordLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="changePasswordLabel">Đổi mật khẩu</h5>
+            </div>
+            <div class="modal-body"> 
+              <div class="current-password item-row">
+                <div class="text">Mật khẩu cũ</div>
+                <div class="password-wrapper">
+                  <input class="form-control" type="password" autocomplete="autocomplete"/>
+                </div>
+              </div>
+              <div class="new-password item-row">
+                <div class="text">Mật khẩu mới</div>
+                <div class="password-wrapper">
+                  <input class="form-control" type="password" autocomplete="autocomplete"/>
+                </div>
+              </div>
+              <div class="new-password-confirm item-row">
+                <div class="text">Nhập lại mật khẩu mới</div>
+                <div class="password-wrapper">
+                  <input class="form-control" type="password" autocomplete="autocomplete"/>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn" type="button" data-dismiss="modal">Huỷ bỏ</button>
+              <button class="btn btn-primary red-btn" type="button">Lưu</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="addNewShipping" tabindex="-1" role="dialog" aria-labelledby="addNewShippingLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="addNewShippingLabel">Thêm địa chỉ mới</h5>
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <form class="modal-body">
+              <input class="form-control full-name" placeholder="Họ và tên" data-name="Họ và tên"/>
+              <div class="invalid-feedback"> </div>
+              <input class="form-control phone" placeholder="Số điện thoại" data-name="Số điện thoại"/>
+              <div class="invalid-feedback"> </div>
+              <select class="custom-select city" data-name="Thành phố"></select>
+              <div class="invalid-feedback"> </div>
+              <select class="custom-select district" data-name="Quận/Huyện">
+                <option>Quận/Huyện</option>
+              </select>
+              <div class="invalid-feedback"> </div>
+              <select class="custom-select ward" data-name="Phường/Xã">
+                <option>Phường/Xã</option>
+              </select>
+              <div class="invalid-feedback"> </div>
+              <textarea class="form-control address" placeholder="Địa chỉ" data-name="Địa chỉ"></textarea>
+              <div class="invalid-feedback"> </div>
+            </form>
+            <div class="modal-footer">
+              <button class="btn" type="button" data-dismiss="modal">Huỷ bỏ</button>
+              <button class="btn btn-primary red-btn save" type="button">Lưu</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="paymentMethods" tabindex="-1" role="dialog" aria-labelledby="paymentMethodsLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="paymentMethodsLabel">Thêm thẻ tín dụng/ghi nợ mới</h5>
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+              <div class="card-wrapper"></div>
+              <form class="payment-methods-form">
+                <input class="form-control payment-method-card-number" placeholder="Số thẻ tín dụng/ghi nợ" name="number"/>
+                <input class="form-control payment-method-full-name" placeholder="Họ và tên chủ thẻ" name="name"/>
+                <input class="form-control payment-method-expiry" placeholder="Ngày hết hạn: MM/YYY" name="expiry"/>
+                <input class="form-control payment-method-cvc" placeholder="Mã bảo mật VD: 123" name="cvc" maxlength="3"/>
+                <div class="pivacy-text">Chúng tôi hợp tác với CyberSouce, công ty thuộc tổ chức thẻ VISA, nhằm đảm bảo thông tin thẻ Tín dụng/Ghi nợ của bạn luôn được bảo mật và an toàn. OBO Stadium không có quyền truy cập vào bất cứ thông tin nào.</div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button class="btn payment-methods-close" type="button" data-dismiss="modal">Huỷ bỏ</button>
+              <button class="btn btn-primary payment-methods-save red-btn" type="button">Lưu</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="confirmDelete" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="confirmDeleteLabel">Xác nhận xoá</h5>
+            </div>
+            <div class="modal-body">Bạn có muốn xoá thông tin thanh toán này không?</div>
+            <div class="modal-footer">
+              <button class="btn" type="button" data-dismiss="modal">Huỷ bỏ</button>
+              <button class="btn btn-primary red-btn" type="button">Xác nhận</button>
             </div>
           </div>
         </div>
@@ -170,7 +266,11 @@
     <!-- Main Js-->
     <script type="text/javascript" src="./script/main.js"></script>
     <script src="./data.json"></script>
-    <script src="./script/buy-selling-product.js"></script>
+    <!-- Card-->
+    <script type="text/javascript" src="./vendor/card/jquery.card.js"></script>
     <script src="./script/except-home-page.js"></script>
+    <script src="./script/address-select.js"></script>
+    <script src="./script/payment-methods.js"></script>
+    <script src="./script/payment-method.page.js"></script>
   </body>
 </html>
