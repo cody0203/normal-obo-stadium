@@ -1,4 +1,4 @@
-@import "../../root.scss";
+@import '../../root.scss';
 
 // Pricing
 
@@ -20,7 +20,6 @@
     background-color: $text-white;
     border: 1px solid $lighter-grey-color;
     @include flex-center-between;
-
 
     &:active {
       background-color: $text-white !important;
@@ -54,12 +53,14 @@
     font-weight: $bold-size;
   }
 
-  & .bid-btn, & .asks-btn {
+  & .bid-btn,
+  & .asks-btn {
     border-bottom-right-radius: $zero-pixel;
     border-top-right-radius: $zero-pixel;
   }
 
-  & .buy-btn, & .sell-btn {
+  & .buy-btn,
+  & .sell-btn {
     border-bottom-left-radius: $zero-pixel;
     border-top-left-radius: $zero-pixel;
 

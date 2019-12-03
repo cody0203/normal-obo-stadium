@@ -1,38 +1,38 @@
-@import "../../root.scss";
+@import '../../root.scss';
 
 // Header - common info
 
 .common-info {
-    margin-bottom: $fifty-pixel;
+  margin-bottom: $fifty-pixel;
 
-    & .brand {
-        color: $product-text-grey;
-        margin-bottom: $fifteen-pixel;
-    }
+  & .brand {
+    color: $product-text-grey;
+    margin-bottom: $fifteen-pixel;
+  }
 
-    & .name {
-        font-weight: 500;
-        font-size: $forty-pixel;
-        line-height: $forty-seven-pixel;
-        margin-bottom: $fifteen-pixel;
-    }
+  & .name {
+    font-weight: 500;
+    font-size: $forty-pixel;
+    line-height: $forty-seven-pixel;
+    margin-bottom: $fifteen-pixel;
+  }
 }
 
 // Product image
 
 .img-zoom-container {
-    cursor: zoom-in;
+  cursor: zoom-in;
 }
 
 .slider-for {
-    margin-bottom: $ten-pixel;
+  margin-bottom: $ten-pixel;
 }
 
 .slider-nav {
-    .slick-slide {
-        margin: $zero-pixel $five-pixel;
-        cursor: pointer;
-    }
+  .slick-slide {
+    margin: $zero-pixel $five-pixel;
+    cursor: pointer;
+  }
 }
 
 // Product Info
@@ -40,102 +40,105 @@
 .title.h3,
 .desc,
 .desc-sub {
-    margin-bottom: $twenty-pixel;
+  margin-bottom: $twenty-pixel;
 }
 
 .desc-sub-title {
-    font-weight: $bold-size;
+  font-weight: $bold-size;
 }
 
 // Buttons
 
 .btns {
-    & .btn-primary {
-        width: 100%;
-        margin-bottom: $twenty-pixel;
-        padding: $twelve-pixel $twenty-pixel;
+  & .btn-primary {
+    width: 100%;
+    margin-bottom: $twenty-pixel;
+    padding: $twelve-pixel $twenty-pixel;
+  }
+
+  & .sell:last-child {
+    margin-bottom: $zero-pixel;
+  }
+
+  .size.btn-primary {
+    padding: $twenty-pixel;
+    background-color: $text-white;
+    border: 1px solid $lighter-grey-color;
+    @include flex-center-between;
+
+    &:active {
+      background-color: $text-white !important;
+      border-color: $lighter-grey-color;
+      color: $text-dark !important;
     }
 
-    & .sell:last-child {
-        margin-bottom: $zero-pixel;
+    &:hover {
+      background-color: $text-white !important;
+      border-color: $text-dark;
+      color: $text-dark !important;
+    }
+  }
+
+  .buy.btn-primary {
+    background-color: $main-color;
+    @include flex-center-between;
+
+    &:hover {
+      background-color: $dark-green;
     }
 
-    .size.btn-primary {
-        padding: $twenty-pixel;
-        background-color: $text-white;
-        border: 1px solid $lighter-grey-color;
-        @include flex-center-between;
-
-
-        &:active {
-            background-color: $text-white !important;
-            border-color: $lighter-grey-color;
-            color: $text-dark !important;
-        }
-
-        &:hover {
-            background-color: $text-white !important;
-            border-color: $text-dark;
-            color: $text-dark !important;
-        }
+    &:active {
+      background-color: $main-color !important;
     }
 
-    .buy.btn-primary {
-        background-color: $green;
-        @include flex-center-between;
-
-        &:hover {
-            background-color: $dark-green;
-        }
-
-        &:active {
-            background-color: $green !important;
-        }
-
-        & .sub-content {
-            color: $light-green;
-        }
+    & .sub-content {
+      color: $light-main-color;
     }
 
-    .sell.btn-primary {
-        @include flex-center-between;
-
-        & .sub-content {
-            color: $light-main-color;
-        }
+    & .buy-text .main-content {
+      text-align: center;
     }
+  }
 
-    .size-details,
-    .main-content {
-        font-size: $thirty-pixel;
-        font-weight: $bold-size;
-        line-height: $forty-two-pixel;
-    }
+  .sell.btn-primary {
+    @include flex-center-between;
 
-    .size-text,
-    .dropdown-arrow {
-        font-size: $twenty-pixel;
-        color: $text-lighter-white;
-        line-height: $twenty-eight-pixel;
+    & .sub-content {
+      color: $light-main-color;
     }
+  }
 
-    .size-details {
-        color: $text-dark;
-    }
+  .size-details,
+  .main-content {
+    font-size: $thirty-pixel;
+    font-weight: $bold-size;
+    line-height: $forty-two-pixel;
+  }
 
-    .left-content,
-    .right-content {
-        text-align: left;
-        color: $text-white;
-    }
+  .size-text,
+  .dropdown-arrow {
+    font-size: $twenty-pixel;
+    color: $text-lighter-white;
+    line-height: $twenty-eight-pixel;
+  }
 
-    .left-content {
-        width: 55%;
-        border-right: 1px solid $text-white;
-    }
+  .size-details {
+    color: $text-dark;
+  }
 
-    .right-content {
-        width: 45%;
-        padding-left: $twenty-pixel;
-    }
+  .left-content,
+  .right-content {
+    text-align: left;
+    color: $text-white;
+  }
+
+  .left-content {
+    width: 55%;
+    border-right: 1px solid $text-white;
+  }
+
+  .right-content {
+    width: 45%;
+    padding-left: $twenty-pixel;
+  }
 }
