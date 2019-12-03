@@ -18,7 +18,7 @@
   letter-spacing: $letter-spacing;
 }
 
-$header-image: url(/image/header-banner.png);
+$header-image: url('/image/header-banner.png');
 
 header {
   @include background-image-banner($header-image, no-repeat, center top);
