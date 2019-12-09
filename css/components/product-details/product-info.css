@@ -63,7 +63,7 @@
   color: #333333 !important;
 }
 .btns .buy.btn-primary {
-  background-color: #12B76D;
+  background-color: #F04E40;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -72,10 +72,13 @@
   background-color: #0f985b;
 }
 .btns .buy.btn-primary:active {
-  background-color: #12B76D !important;
+  background-color: #F04E40 !important;
 }
 .btns .buy.btn-primary .sub-content {
-  color: #CEFBD4;
+  color: #FEE8D8;
+}
+.btns .buy.btn-primary .buy-text .main-content {
+  text-align: center;
 }
 .btns .sell.btn-primary {
   display: flex;
